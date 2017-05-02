@@ -17,7 +17,7 @@ class ServiceBot< SlackRubyBot::Bot
       customer = fastly.get_customer(customer_id)
       client.say(channel: data.channel, text: service_id + " is a service that belongs to " + customer.name + ' (CID:  ' + customer_id + ')')
     rescue StandardError=>e
-      client.say(channel: data.channel, text: 'Sorry, that Service ID is not in our system.')
+      client.say(channel: data.channel, text: 'Sorry, ' + service_id + ' is not in our system.')
     end
   end
 end
